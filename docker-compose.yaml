@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  data-analysis-python-app:
+    build:
+      context: .
+      dockerfile: 'Dockerfile'
+    container_name: data-analysis-python-app
+    ports:
+      - "5000:5000"
+    networks:
+      - data-analysis
+    restart: always
+
+networks:
+  data-analysis:
+    driver: bridge
